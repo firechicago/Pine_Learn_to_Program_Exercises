@@ -1,0 +1,26 @@
+def newstyleromannumerals number
+  numeral_array = [["M",1000],
+  ["D", 500],
+  ["C", 100],
+  ["L", 50],
+  ["X", 10],
+  ["V", 5],
+  ["I", 1]]
+  return "" if number == 0
+  numeral_array.each do |digit|
+    if number >= digit[1]
+      return digit[0] + newstyleromannumerals(number - digit[1])
+    end
+    numeral_array.reverse.each do |seconddigit|
+      if (seconddigit[1]%10 == 0 or seconddigit[1] == 1) and seconddigit[1] <= digit[1]/5
+        if number >= digit[1] - seconddigit[1]
+          return seconddigit[0] + digit[0] + newstyleromannumerals(number - digit[1] + seconddigit[1])
+        end
+      end
+    end
+  end
+end
+
+puts "Give me a number to convert into a new-style roman numeral."
+number = gets.chomp.to_i
+puts newstyleromannumerals number

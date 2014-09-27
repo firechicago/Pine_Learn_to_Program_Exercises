@@ -1,0 +1,9 @@
+numberofbottles = 99
+while numberofbottles > 0 do
+  puts "#{numberofbottles} bottles of beer on the wall!"
+  puts "#{numberofbottles} bottles of beer"
+  puts "Take one down, pass it around,"
+  numberofbottles -= 1
+  puts "#{numberofbottles} bottles of beer on the wall!"
+end
+puts "No more bottles of beer on the wall!"

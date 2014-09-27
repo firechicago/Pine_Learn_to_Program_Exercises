@@ -1,0 +1,8 @@
+tocarray = ["Chapter 1: Introduction", "Page 1", "Chapter 2: Numbers", "Page 9", "Chapter 3: Letters", "Page 13"]
+line_width = 50
+puts "Table of Contents".center(line_width)
+index = 0
+while index < tocarray.length / 2
+  puts (tocarray[index*2].ljust(line_width/2)+tocarray[index*2 + 1].rjust(line_width/2))
+  index += 1
+end
